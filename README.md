@@ -1,4 +1,4 @@
-# AI Passport · Canon XC 与蓝牙相机遥控
+# XC Canon Camera Remote · 佳能 XC 与蓝牙相机遥控
 
 用于 FoloToy AI Passport（ESP32-C3、8 MB Flash、240×320 RGB565）的独立固件。通过局域网的 Canon XC 接口读相机参数、按档调节曝光和色温，并用全屏外框显示相机返回的 Tally。也可通过低功耗蓝牙模拟 Canon BR-E1，用于支持佳能无线遥控器的相机。上游板级驱动保持原样。
 
