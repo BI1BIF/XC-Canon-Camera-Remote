@@ -42,6 +42,19 @@ run_static_checks() {
     "${CC:-cc}" -std=c11 -Wall -Wextra -Werror -Imain \
         tests/test_key_guard.c -o "${test_dir}/test_key_guard"
     "${test_dir}/test_key_guard"
+    "${CC:-cc}" -std=c11 -Wall -Wextra -Werror -Imain \
+        tests/test_xc_protocol.c main/xc_protocol.c -o "${test_dir}/test_xc_protocol"
+    "${test_dir}/test_xc_protocol"
+    "${CC:-cc}" -std=c11 -Wall -Wextra -Werror -Imain \
+        tests/test_canon_ble.c main/canon_ble_protocol.c -o "${test_dir}/test_canon_ble"
+    "${test_dir}/test_canon_ble"
+    "${CC:-cc}" -std=c11 -Wall -Wextra -Werror -Imain \
+        tests/test_xc_navigation.c main/xc_navigation.c -o "${test_dir}/test_xc_navigation"
+    "${test_dir}/test_xc_navigation"
+    cc -std=c11 -Wall -Wextra -Werror -Imain tests/test_xc_settings.c main/xc_portal.c \
+        -o "${test_dir}/test_xc_settings"
+    "${test_dir}/test_xc_settings"
+    PYTHONDONTWRITEBYTECODE=1 python3 tools/generate_xc_fonts.py --check
     "${CC:-cc}" -std=c11 -Wall -Wextra -Werror -Icomponents/bsp/src \
         tests/test_bsp_display_rounding.c components/bsp/src/bsp_display_rounding.c \
         -o "${test_dir}/test_bsp_display_rounding"

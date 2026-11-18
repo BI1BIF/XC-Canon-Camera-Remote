@@ -1,16 +1,8 @@
 idf_component_register(
-    SRCS "main.c"
-         "demo_navigation.c"
-         "ui_pixel.c"
-         "ui_pixel_math.c"
-         "demo_display.c"
-         "demo_button.c"
-         "demo_audio.c"
-         "demo_battery.c"
-         "demo_radio.c"
-         "demo_wifi.c"
-         "demo_ble.c"
-         "demo_low_power.c"
+    SRCS "xc_main.c" "xc_navigation.c" "xc_ui.c" "xc_wifi.c" "xc_client.c" "xc_protocol.c" "xc_portal.c"
+         "canon_ble.c" "canon_ble_protocol.c"
+         "../assets/fonts/xc_font_14.c" "../assets/fonts/xc_font_20.c"
     INCLUDE_DIRS "."
-    REQUIRES bsp bt esp_event esp_hw_support esp_netif esp_timer esp_wifi nvs_flash
+    REQUIRES bsp esp_event esp_http_client esp_http_server esp_netif esp_timer esp_wifi lwip nvs_flash
+    PRIV_REQUIRES bt
 )

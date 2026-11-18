@@ -15,6 +15,12 @@
 - 添加字库前评估 Flash 与内部 RAM 影响；ESP32-C3 无 PSRAM。
 - 不提交许可不允许分发的字库。
 
+XC 遥控使用 `fonts/xc_font_*.c` 中的 Noto Sans SC 14 和 20 像素子集，
+遵循 [SIL 开放字体许可证](fonts/OFL-NotoSansSC.txt)。取
+[Noto Sans SC](https://github.com/google/fonts/tree/main/ofl/notosanssc)
+的一个字重实例，运行 `python tools/generate_xc_fonts.py /path/to/NotoSansSC.ttf`
+（需 Pillow）即可重新生成。脚本收集 ASCII 和应用屏幕使用的字符。
+
 ## 图片（images）
 
 可复用的源图与生成的显示资产放在 `images/`。

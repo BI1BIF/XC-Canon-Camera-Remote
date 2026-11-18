@@ -198,6 +198,7 @@ LICENSE                  仓库许可证
 
 | 入口 | 你可以找到 |
 | --- | --- |
+| [相机遥控器产品上下文](/docs/PRODUCT.zh_CN.md) | 本分支佳能遥控应用的使用者和导航原则 |
 | [开发指南](/docs/development/README.zh_CN.md) | AI 工作流、工程规范、CI 与发布流程 |
 | [AI 技能](/skills/README.zh_CN.md) | 开发、环境准备、构建、真机测试与故障诊断 |
 | [硬件资料](/docs/hardware-design/README.zh_CN.md) | 板卡事实、接口边界、验收清单与排障 |

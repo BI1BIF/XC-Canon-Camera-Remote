@@ -17,6 +17,12 @@ Store reusable font files and generated font sources in `fonts/`.
 - Check Flash and internal-RAM impact before adding a font; the ESP32-C3 has no PSRAM.
 - Do not commit fonts whose license does not permit redistribution.
 
+The XC remote uses Noto Sans SC 14 and 20 px subsets in `fonts/xc_font_*.c`,
+under the [SIL Open Font License](fonts/OFL-NotoSansSC.txt). To regenerate, use
+an instance of [Noto Sans SC](https://github.com/google/fonts/tree/main/ofl/notosanssc)
+with `python tools/generate_xc_fonts.py /path/to/NotoSansSC.ttf` (Pillow).
+The generator collects ASCII and the application's on-screen characters.
+
 ## Images
 
 Store reusable source images and generated display assets in `images/`.
