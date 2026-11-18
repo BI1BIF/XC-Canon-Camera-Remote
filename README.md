@@ -1,10 +1,10 @@
-# BI1BIF · AI Passport 应用
+# XC Canon Camera Remote · 佳能 XC 与蓝牙相机遥控
 
 本仓库派生自 [FoloToy/ai-passport](https://github.com/FoloToy/ai-passport)。`main` 保留官方基础代码，下面完整收录本仓库应用的介绍与使用方法。
 
-**佳能遥控应用的完整源码及构建入口在 [feature/xc-camera-remote](https://github.com/BI1BIF/ai-passport/tree/feature/xc-camera-remote)。** 获取源码后，先执行 `git checkout feature/xc-camera-remote`，再按下文构建；直接构建 `main` 得到的是官方基础应用。
+**佳能遥控应用的完整源码及构建入口在 [feature/xc-camera-remote](https://github.com/BI1BIF/XC-Canon-Camera-Remote/tree/feature/xc-camera-remote)。** 获取源码后，先执行 `git checkout feature/xc-camera-remote`，再按下文构建；直接构建 `main` 得到的是官方基础应用。
 
-## AI Passport · Canon XC 与蓝牙相机遥控
+## Canon XC 与蓝牙相机遥控
 
 用于 FoloToy AI Passport（ESP32-C3、8 MB Flash、240×320 RGB565）的独立固件。通过局域网的 Canon XC 接口读相机参数、按档调节曝光和色温，并用全屏外框显示相机返回的 Tally。也可通过低功耗蓝牙模拟 Canon BR-E1，用于支持佳能无线遥控器的相机。上游板级驱动保持原样。
 
@@ -57,7 +57,7 @@ XC 部分机型需要升级相机固件：佳能 RC-IP100 官方表列出 C70 �
 3. 上下选择「拍照」「自动对焦」「启停录像」，单击确定执行。部分机型拍照要先设为遥控自拍驱动模式；录像要切到视频并启用「遥控」。断线后的第一次执行键只尝试重连，连接后再按一次才发送拍摄指令。双击确定打开蓝牙设置，长按确定返回功能首页。
 4. 蓝牙页的「指令已发送」表示指令已提交。蓝牙遥控没有 XC 的 Tally、REC 回读或曝光参数；请在相机上确认是否执行。
 
-蓝牙遥控的配对及拍照、对焦、录像操作流程参考 Taraskad3o 的 [M5Stack-AtomS3-BLE-Remote-for-Canon](https://github.com/Taraskad3o/M5Stack-AtomS3-BLE-Remote-for-Canon)，感谢原作者。当前版本针对 AI Passport 的三键和竖屏重新设计界面，蓝牙通信使用 ESP-IDF NimBLE 实现；BR-E1 协议参考 [ESP32 Canon BLE Remote](https://github.com/maxmacstn/ESP32-Canon-BLE-Remote) 和 [BR-E1 真机抓包记录](https://github.com/pulsar-trigger/pulsar-trigger/blob/e4bc6156e6dfdd0acedac0099e53b38f2db651d0/docs/canon-ble-research.md)。第三方版权与许可声明见 [THIRD_PARTY_NOTICES.txt](https://github.com/BI1BIF/ai-passport/blob/feature/xc-camera-remote/THIRD_PARTY_NOTICES.txt)。
+蓝牙遥控的配对及拍照、对焦、录像操作流程参考 Taraskad3o 的 [M5Stack-AtomS3-BLE-Remote-for-Canon](https://github.com/Taraskad3o/M5Stack-AtomS3-BLE-Remote-for-Canon)，感谢原作者。当前版本针对 AI Passport 的三键和竖屏重新设计界面，蓝牙通信使用 ESP-IDF NimBLE 实现；BR-E1 协议参考 [ESP32 Canon BLE Remote](https://github.com/maxmacstn/ESP32-Canon-BLE-Remote) 和 [BR-E1 真机抓包记录](https://github.com/pulsar-trigger/pulsar-trigger/blob/e4bc6156e6dfdd0acedac0099e53b38f2db651d0/docs/canon-ble-research.md)。第三方版权与许可声明见 [THIRD_PARTY_NOTICES.txt](https://github.com/BI1BIF/XC-Canon-Camera-Remote/blob/feature/xc-camera-remote/THIRD_PARTY_NOTICES.txt)。
 
 设置中的「设备状态」、预设、相机状态、Wi-Fi 清除确认及扫码页面，返回时保留上一级的选中位置。设置页默认选中「返回遥控界面」，按一下即可回到遥控，不会误选另一种模式。清除 Wi-Fi 必须选「确认清除」后单击确定；双击不执行清除。配网成功返回打开它的页面，发现相机取消时也返回原页面。
 
